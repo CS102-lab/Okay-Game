@@ -72,14 +72,16 @@ public class ApplicationMain {
 
                 gameContinues = !game.didGameFinish() && game.hasMoreTileInStack();
 
-                if(gameContinues) {
+                if(gameContinues) 
+                {
                     // if game continues we need to discard a tile using the given index by the player
+                    do{
                     System.out.println("Which tile you will discard?");
                     System.out.print("Discard the tile in index: ");
                     playerChoice = sc.nextInt();
-
+                    }while(playerChoice >=14 || playerChoice <= 0);
+                    
                     // TODO: make sure the given index is correct, should be 0 <= index <= 14
-
                     game.discardTile(playerChoice);
                     game.passTurnToNextPlayer();
                 }
@@ -92,6 +94,8 @@ public class ApplicationMain {
                         // TODO: the game ended with no more tiles in the stack
                         // determine the winner based on longest chain lengths of the players
                         // use getPlayerWithHighestLongestChain method of game for this task
+                        System.out.println( game.getPlayerWithHighestLongestChain + "wins");
+                    
                     }
                 }
             }
@@ -120,6 +124,7 @@ public class ApplicationMain {
                         // TODO: the game ended with no more tiles in the stack
                         // determine the winner based on longest chain lengths of the players
                         // use getPlayerWithHighestLongestChain method of game for this task
+                        System.out.println( game.getPlayerWithHighestLongestChain + "wins");
                     }
                 }
             }
