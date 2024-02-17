@@ -2,6 +2,8 @@ public class Tile {
     
     int value;
 
+
+    //DENEMEEEEEEEEEEEEEEEE
     /*
      * creates a tile using the given value. False jokers are not included in this game.
      */
