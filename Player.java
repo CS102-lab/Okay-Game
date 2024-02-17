@@ -16,8 +16,32 @@ public class Player {
      * and the extra tile does not disturb the longest chain and therefore the winning condition
      * check the assigment text for more details on winning condition
      */
-    public boolean checkWinning() {
-        return false;
+    public boolean checkWinning() 
+    {
+       
+        Arrays.sort(playerTiles, 0, numberOfTiles);
+
+        int currentChainLength = 1;
+        int longestChainLength = 1;
+
+        
+        for (int i = 1; i < numberOfTiles; i++) {
+            if (playerTiles[i].getValue() == playerTiles[i - 1].getValue() + 1) 
+            {
+                currentChainLength++;
+                if (currentChainLength > longestChainLength) 
+                {
+                    longestChainLength = currentChainLength;
+                }
+            } else 
+            {
+                currentChainLength = 1;
+            }
+        }
+
+        // Check if the longest chain is at least 14
+        return longestChainLength >= 14;
+
     }
 
     /*
