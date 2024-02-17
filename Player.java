@@ -33,7 +33,8 @@ public class Player {
                 {
                     longestChainLength = currentChainLength;
                 }
-            } else 
+            } 
+            else 
             {
                 currentChainLength = 1;
             }
