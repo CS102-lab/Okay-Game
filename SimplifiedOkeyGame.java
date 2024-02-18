@@ -10,10 +10,10 @@ public class SimplifiedOkeyGame {
     Tile lastDiscardedTile;
 
     int currentPlayerIndex = 0;
-
     public SimplifiedOkeyGame() {
         players = new Player[4];
-    }
+     }
+
 
     public void createTiles() {
         tiles = new Tile[104];
