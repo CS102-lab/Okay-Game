@@ -10,7 +10,8 @@ public class SimplifiedOkeyGame {
 
     public SimplifiedOkeyGame() {
         players = new Player[4];
-    }
+     }
+//sncjn
 
     public void createTiles() {
         tiles = new Tile[104];
