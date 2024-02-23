@@ -41,6 +41,8 @@ public class SimplifiedOkeyGame {
         for(int i = 1; i < tiles.length / 2; i++)
         {
             players[i - 1 / 14].addTile(tiles[i]);
+
+            lastDiscardedTile = tiles[i];
         }
     }
 
