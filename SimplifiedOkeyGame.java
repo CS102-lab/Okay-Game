@@ -64,7 +64,7 @@ public class SimplifiedOkeyGame {
      */
     public String getTopTile() 
     {
-        return tiles[0];
+        return tiles[tiles.length - tileCount--].toString();
     }
 
     /*
