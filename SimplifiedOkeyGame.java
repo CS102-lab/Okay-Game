@@ -136,7 +136,24 @@ public class SimplifiedOkeyGame {
      * by checking if it increases the longest chain length, if not get the top tile
      */
     public void pickTileForComputer() {
+        Player currentComputer = players[currentPlayerIndex];
 
+        int currentLongestChain = currentComputer.findLongestChain();
+
+        currentComputer.addTile(lastDiscardedTile);
+
+        int newLongestChain = currentComputer.findLongestChain();
+
+        currentComputer.getAndRemoveTile(14); //??
+
+        if(newLongestChain > currentLongestChain && lastDiscardedTile != null)
+        {
+            getLastDiscardedTile();
+        }
+        else
+        {
+            getTopTile();
+        }
     }
 
     /*
