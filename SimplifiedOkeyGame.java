@@ -34,8 +34,14 @@ public class SimplifiedOkeyGame {
      * player at index 0 gets 15 tiles and starts first
      * other players get 14 tiles, this method assumes the tiles are already shuffled
      */
-    public void distributeTilesToPlayers() {
+    public void distributeTilesToPlayers() 
+    {
+        players[0].addTile(tiles[0]);
 
+        for(int i = 1; i < tiles.length / 2; i++)
+        {
+            players[i - 1 / 14].addTile(tiles[i]);
+        }
     }
 
     /*
