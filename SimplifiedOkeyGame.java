@@ -43,8 +43,9 @@ public class SimplifiedOkeyGame {
      * (this simulates picking up the tile discarded by the previous player)
      * it should return the toString method of the tile so that we can print what we picked
      */
-    public String getLastDiscardedTile() {
-        return null;
+    public String getLastDiscardedTile() 
+    {
+        return lastDiscardedTile;
     }
 
     /*
@@ -53,8 +54,9 @@ public class SimplifiedOkeyGame {
      * and it will be given to the current player
      * returns the toString method of the tile so that we can print what we picked
      */
-    public String getTopTile() {
-        return null;
+    public String getTopTile() 
+    {
+        return tiles[0];
     }
 
     /*
