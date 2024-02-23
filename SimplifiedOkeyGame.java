@@ -53,7 +53,7 @@ public class SimplifiedOkeyGame {
      */
     public String getLastDiscardedTile() 
     {
-        return lastDiscardedTile;
+        return lastDiscardedTile.toString();
     }
 
     /*

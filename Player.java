@@ -1,9 +1,12 @@
+import java.util.Arrays;
+
 public class Player {
     String playerName;
     Tile[] playerTiles;
     int numberOfTiles;
 
-    public Player(String name) {
+    public Player(String name) 
+    {
         setName(name);
         playerTiles = new Tile[15]; // there are at most 15 tiles a player owns at any time
         numberOfTiles = 0; // currently this player owns 0 tiles, will pick tiles at the beggining of the game
@@ -19,26 +22,7 @@ public class Player {
     public boolean checkWinning() 
     {
        
-        Arrays.sort(playerTiles, 0, numberOfTiles);
-
-        int currentChainLength = 1;
-        int longestChainLength = 1;
-
-        
-        for (int i = 1; i < numberOfTiles; i++) {
-            if (playerTiles[i].getValue() == playerTiles[i - 1].getValue() + 1) 
-            {
-                currentChainLength++;
-                if (currentChainLength > longestChainLength) 
-                {
-                    longestChainLength = currentChainLength;
-                }
-            } 
-            else 
-            {
-                currentChainLength = 1;
-            }
-        }
+        int longestChainLength = findLongestChain();
 
         // Check if the longest chain is at least 14
         return longestChainLength >= 14;
@@ -52,17 +36,58 @@ public class Player {
      * and also for determining the winner if tile stack has no tiles
      */
     public int findLongestChain() {
-        int longestChain = 0;
+        
+        Arrays.sort(playerTiles, 0, numberOfTiles);
+        
+        int currentChainLength = 1;
+        int longestChain = 1;
 
-        return longestChain;
+        for (int i = 1; i < numberOfTiles; i++) {
+                    if (playerTiles[i].getValue() == playerTiles[i - 1].getValue() + 1) 
+                    {
+                        currentChainLength++;
+                        if (currentChainLength > longestChain) 
+                        {
+                            longestChain = currentChainLength;
+                        }
+                    } 
+                    else 
+                    {
+                        currentChainLength = 1;
+                    }
+                }
+        
+                return longestChain;
     }
 
     /*
      * TODO: removes and returns the tile in given index position
      */
     public Tile getAndRemoveTile(int index) {
-        return null;
+        
+        if (index < 0 || index >= numberOfTiles) {
+            // Handle invalid index, for example by returning null or throwing an exception
+            return null;
+        }
+
+        // Get the tile at the specified index
+        Tile removedTile = playerTiles[index];
+
+        // Shift the remaining tiles to the left to fill the gap
+        for (int i = index; i < numberOfTiles - 1; i++) {
+            playerTiles[i] = playerTiles[i + 1];
+        }
+
+        // Set the last element to null or any default value
+        playerTiles[numberOfTiles - 1] = null;
+
+        // Decrement the number of tiles
+        numberOfTiles--;
+
+        // Return the removed tile
+        return removedTile;
     }
+    
 
     /*
      * TODO: adds the given tile to this player's hand keeping the ascending order
@@ -71,7 +96,24 @@ public class Player {
      */
     public void addTile(Tile t) {
 
+        int index = 0;
+
+        while (index < numberOfTiles && playerTiles[index].getValue() < t.getValue()) {
+            index++;
+        }
+
+        for (int i = numberOfTiles; i > index; i--) {
+            playerTiles[i] = playerTiles[i - 1];
+        }
+
+        
+        playerTiles[index] = t;
+
+        
+        numberOfTiles++;
     }
+
+    
 
     /*
      * finds the index for a given tile in this player's hand
