@@ -37,11 +37,12 @@ public class SimplifiedOkeyGame {
     public void distributeTilesToPlayers() 
     {
         players[0].addTile(tiles[0]);
+        tileCount--;
 
         for(int i = 1; i < tiles.length / 2; i++)
         {
-            players[i - 1 / 14].addTile(tiles[i]);
-
+            players[i - 1 / 14].addTile(tiles[tiles.length - tileCount--]);
+            
             lastDiscardedTile = tiles[i];
         }
     }
