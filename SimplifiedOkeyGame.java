@@ -38,7 +38,7 @@ public class SimplifiedOkeyGame {
     {
         players[0].addTile(tiles[tiles.length - tileCount--]);
 
-        for(int i = 1; i < tiles.length / 2; i++)
+        for(int i = 1; i < (tiles.length / 2) + 5; i++)
         {
             players[(int)((i - 1) / 14)].addTile(tiles[tiles.length - tileCount--]);
             
