@@ -79,7 +79,7 @@ public class ApplicationMain {
                     System.out.println("Which tile you will discard?");
                     System.out.print("Discard the tile in index: ");
                     playerChoice = sc.nextInt();
-                    }while(playerChoice >=14 || playerChoice <= 0);
+                    }while(playerChoice > 14 || playerChoice < 0);
                     
                     // TODO: make sure the given index is correct, should be 0 <= index <= 14
                     game.discardTile(playerChoice);
