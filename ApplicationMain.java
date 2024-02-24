@@ -126,7 +126,7 @@ public class ApplicationMain {
                         // use getPlayerWithHighestLongestChain method of game for this task
                         for(int i = 0; i < game.getPlayerWithHighestLongestChain().size(); i++){
                             
-                            System.out.println(game.getPlayerWithHighestLongestChain().get(i).getName() + "wins.");
+                            System.out.println(game.getPlayerWithHighestLongestChain().get(i).getName() + " wins.");
                         }                                
                         
                     }
