@@ -172,7 +172,7 @@ public class SimplifiedOkeyGame {
         {
             Tile nextTile = currentComputerTiles[i];
 
-            if(nextTile == prevTile)
+            if(nextTile.compareTo(prevTile) == 0)
             {
                 currentComputer.getAndRemoveTile(i);
                 i = currentComputerTiles.length;
