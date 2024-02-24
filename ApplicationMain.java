@@ -58,7 +58,7 @@ public class ApplicationMain {
                         System.out.println("You picked up: " + game.getTopTile());
                         firstTurn = false;
                     }
-                    else if(playerChoice == 2) {
+                    else {
                         System.out.println("You picked up: " + game.getLastDiscardedTile());
                     }
 
