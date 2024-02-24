@@ -53,6 +53,7 @@ public class SimplifiedOkeyGame {
      */
     public String getLastDiscardedTile() 
     {
+        players[currentPlayerIndex].addTile(lastDiscardedTile);
         return lastDiscardedTile.toString();
     }
 
