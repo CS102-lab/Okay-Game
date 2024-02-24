@@ -180,7 +180,10 @@ public class SimplifiedOkeyGame {
                 keepGoing = false;
             }
 
-            prevTile = nextTile;
+            else
+            {
+                prevTile = nextTile;
+            }
         }
 
         if(keepGoing)
