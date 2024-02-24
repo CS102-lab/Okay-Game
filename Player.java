@@ -37,8 +37,6 @@ public class Player {
      */
     public int findLongestChain() {
         
-        Arrays.sort(playerTiles, 0, numberOfTiles);
-        
         int currentChainLength = 1;
         int longestChain = 1;
 
