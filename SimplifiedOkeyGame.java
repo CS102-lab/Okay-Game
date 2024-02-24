@@ -162,7 +162,7 @@ public class SimplifiedOkeyGame {
      * you may choose based on how useful each tile is
      */
     public void discardTileForComputer() {
-        Player currentComputer = players[currentPlayerIndex];
+         Player currentComputer = players[currentPlayerIndex];
 
         Tile[] currentComputerTiles = currentComputer.getTiles();
         Tile prevTile = currentComputerTiles[0];
@@ -176,8 +176,11 @@ public class SimplifiedOkeyGame {
             {
                 currentComputer.getAndRemoveTile(i);
                 i = currentComputerTiles.length;
+                lastDiscardedTile = nextTile;
                 keepGoing = false;
             }
+
+            prevTile = nextTile;
         }
 
         if(keepGoing)
@@ -192,7 +195,7 @@ public class SimplifiedOkeyGame {
 
                 if(newChain == longestChain)
                 {
-                    currentComputer.getAndRemoveTile(j);
+                    lastDiscardedTile = currentComputer.getAndRemoveTile(j);
                     j = currentComputerTiles.length;
                 }
             }
