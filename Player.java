@@ -36,6 +36,7 @@ public class Player {
      * and also for determining the winner if tile stack has no tiles
      */
     public int findLongestChain() {
+          
         
         int currentChainLength = 1;
         int longestChain = 1;
