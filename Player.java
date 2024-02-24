@@ -72,12 +72,12 @@ public class Player {
         // Get the tile at the specified index
         Tile removedTile = playerTiles[index];
 
-        // Shift the remaining tiles to the left to fill the gap
+       
         for (int i = index; i < numberOfTiles - 1; i++) {
             playerTiles[i] = playerTiles[i + 1];
         }
 
-        // Set the last element to null or any default value
+        
         playerTiles[numberOfTiles - 1] = null;
 
         // Decrement the number of tiles
