@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Player {
     String playerName;
     Tile[] playerTiles;
